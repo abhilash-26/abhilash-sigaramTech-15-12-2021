@@ -35,6 +35,11 @@ export const Button = styled.button`
   background-color: none;
   border: 2px solid orange;
   border-radius: 5px;
+  cursor: pointer;
+  :hover {
+    border: 2px solid green;
+    background-color: white;
+  }
 `;
 
 const ProductCard = ({ item, pa }) => {
@@ -47,9 +52,11 @@ const ProductCard = ({ item, pa }) => {
     if (allitems.cartItems.length == 0) {
       const da = [item];
       dispatch(setAddToCart(da));
+      alert("Item added to cart");
     } else {
       let newCart = [...allitems.cartItems, item];
       dispatch(setAddToCart(newCart));
+      alert("Item added to cart");
     }
   };
   return (
