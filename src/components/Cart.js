@@ -10,6 +10,7 @@ const Cart = () => {
     <div>
       <Link to="/">Go To Home</Link>
       <h1>CART ITEMS</h1>
+      {allitems && allitems.cartItems.length == 0 && <p>Cart is empty!</p>}
       {allitems &&
         allitems.cartItems.map((item) => (
           <ProductCard item={item} pa={"cart"} />
